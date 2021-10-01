@@ -1,0 +1,14 @@
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.exe
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.deps.json
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.runtimeconfig.json
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.runtimeconfig.dev.json
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.dll
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\bin\Debug\netcoreapp3.1\TeleprompterConsole.pdb
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.csproj.AssemblyReference.cache
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.AssemblyInfoInputs.cache
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.AssemblyInfo.cs
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.csproj.CoreCompileInputs.cache
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.dll
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.pdb
+C:\Users\Michal\source\repos\LanguagesAndCompilers\week2\TeleprompterConsole\TeleprompterConsole\obj\Debug\netcoreapp3.1\TeleprompterConsole.genruntimeconfig.cache
