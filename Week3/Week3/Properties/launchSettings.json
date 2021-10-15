@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Week3": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Michal\\source\\repos\\LanguagesAndCompilers\\Week3\\LanguagesAndCompilers\\Week3\\Week3\\example.tri"
+    }
+  }
+}
