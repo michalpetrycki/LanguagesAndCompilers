@@ -58,6 +58,24 @@ namespace Week3
         private void WriteFinalMessage()
         {
             // Write output to tell the user whether it worked or not here
+            if (Reporter.ErrorsNumber > 0)
+            {
+
+                Console.WriteLine("=================FINAL MESSAGE================");
+
+                foreach (ErrorOccured err in Reporter.Errors)
+                {
+
+                    Console.WriteLine($"Error in line: {err.Position.LineNumber} at position: {err.Position.ColumnPosition}: {err.ErrorMessage}");
+
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("=================FINAL MESSAGE================");
+                Console.WriteLine($"No errors occured");
+            }
         }
 
         /// <summary>

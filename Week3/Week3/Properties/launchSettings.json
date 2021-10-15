@@ -2,7 +2,7 @@
   "profiles": {
     "Week3": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Michal\\source\\repos\\LanguagesAndCompilers\\Week3\\LanguagesAndCompilers\\Week3\\Week3\\example.tri"
+      "commandLineArgs": "C:\\Users\\Michal\\source\\repos\\CM4106\\LanguagesAndCompilers\\Week3\\Week3\\example_chars_error1.tri"
     }
   }
 }

@@ -12,7 +12,7 @@ namespace Week3.Tokenization
     public enum TokenType
     {
         // non-terminals
-        IntLiteral, Identifier, Operator,
+        CharLiteral, IntLiteral, Identifier, Operator,
 
         // reserved words - terminals
         Begin, Const, Do, Else, End, If, In, Let, Then, Var, While,

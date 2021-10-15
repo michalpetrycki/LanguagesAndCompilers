@@ -64,19 +64,20 @@ namespace Week3.Tokenization
             SkipSeparators();
 
             // Remember the starting position of the token
-            // Position tokenStartPosition = Reader.CurrentPosition;
+            Position tokenStartPosition = Reader.CurrentPosition;
 
             // Scan the token and work out its type
             TokenType tokenType = ScanToken();
 
             // Create the token
-            Token token = new Token(tokenType, TokenSpelling.ToString());
+            Token token = new Token(tokenType, TokenSpelling.ToString(), tokenStartPosition);
             Debugger.Write($"Scanned {token}");
 
             // Report an error if necessary
             if (tokenType == TokenType.Error)
             {
                 // Report the error here
+                Reporter.RecordAndReportError(TokenSpelling.ToString(), tokenStartPosition);
             }
 
             return token;
@@ -105,34 +106,124 @@ namespace Week3.Tokenization
         private TokenType ScanToken()
         {
 
-            while (Reader.Current != (char) TokenType.EndOfText)
+            TokenSpelling.Clear();
+            if (char.IsLetter(Reader.Current))
+            {
+                // Reading an identifier
+                TakeIt();
+                while (char.IsLetterOrDigit(Reader.Current))
+                    TakeIt();
+                if (TokenTypes.IsKeyword(TokenSpelling))
+                    return TokenTypes.GetTokenForKeyword(TokenSpelling);
+                else
+                    return TokenType.Identifier;
+            }
+            else if (char.IsDigit(Reader.Current))
             {
 
-                TokenSpelling.Clear();
-
-                if ((Char.IsLetter(Reader.Current)))
+                // Reading an integer
+                TakeIt();
+                while (char.IsDigit(Reader.Current))
                 {
+                    TakeIt();
+                }
+                return TokenType.IntLiteral;
 
-                    TokenSpelling.Append(Reader.Current);
-                    Reader.MoveNext();
+            }
+            else if (IsOperator(Reader.Current))
+            {
 
-                    while (Char.IsLetter(Reader.Current) || Char.IsDigit(Reader.Current))
-                    {
+                // Reading operator
+                TakeIt();
+                return TokenType.Operator;
 
-                        TokenSpelling.Append(Reader.Current);
-                        Reader.MoveNext();
+            }
+            else if (Reader.Current == ':')
+            {
 
-                    }
-
-                    yield return new Token(Reader.Current.GetType(), 
-                        char.ToUpper(TokenSpelling.ToString().ToCharArray()[0]) + TokenSpelling.ToString().Substring(1));
-
+                // Read an :
+                TakeIt();
+                // Is it : or :=
+                if (Reader.Current == '=')
+                {
+                    TakeIt();
+                    return TokenType.Becomes;
+                }
+                else
+                {
+                    return TokenType.Colon;
                 }
 
             }
-            
+            else if (Reader.Current == ';')
+            {
 
-            
+                // Read a ;
+                TakeIt();
+                return TokenType.Semicolon;
+
+            }
+            else if (Reader.Current == '~')
+            {
+
+                // Read a ~
+                TakeIt();
+                return TokenType.Is;
+
+            }
+            else if (Reader.Current == '(')
+            {
+
+                // Read a (
+                TakeIt();
+                return TokenType.LeftBracket;
+
+            }
+            else if (Reader.Current == ')')
+            {
+
+                // Read a )
+                TakeIt();
+                return TokenType.RightBracket;
+
+            }
+            else if (Reader.Current == '\'')
+            {
+
+                // Read a '
+                TakeIt();
+                // Take whatever the character is
+                TakeIt();
+                // Try getting the closing '
+                if (Reader.Current == '\'')
+                {
+
+                    TakeIt();
+                    return TokenType.CharLiteral;
+                }
+                else
+                {
+
+                    // Could do some better error handling here but we weren't asked to
+                    return TokenType.Error;
+                }
+
+            }
+            else if (Reader.Current == default(char))
+            {
+
+                // Read the end of the file
+                TakeIt();
+                return TokenType.EndOfText;
+            }
+            else
+            {
+
+                // Encountered a character we weren't expecting
+                TakeIt();
+                return TokenType.Error;
+            }
+
         }
 
         /// <summary>
